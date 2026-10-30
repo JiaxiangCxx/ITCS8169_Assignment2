@@ -1,0 +1,28 @@
+experiment:
+  name: linear_ssl_simclr_r18_e500
+  seed: 0
+data:
+  root: dataset
+  train_dir: train
+  test_dir: test
+  split_file: splits/seed0_val20.json
+  val_fraction: 0.2
+  image_size: 224
+  cache_size: 256
+  augmentation: basic
+  batch_size: 128
+  num_workers: 6
+model:
+  name: resnet18
+  init: ssl
+  init_checkpoint: runs/ssl_simclr_r18_e500/last.pt
+  freeze_backbone: true
+train:
+  epochs: 100
+  optimizer: adamw
+  learning_rate: 0.001
+  weight_decay: 0.0
+  warmup_epochs: 0
+  label_smoothing: 0.0
+  amp: true
+  early_stopping_patience: 0

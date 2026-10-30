@@ -1,0 +1,12 @@
+{
+  "accuracy": 0.9,
+  "checkpoints": [
+    "/net/projects/cci-abc/HPDiL/jzhang84/assignment2/checkpoints/ft_randaug_mix_crop008_all_seed0.pt",
+    "/net/projects/cci-abc/HPDiL/jzhang84/assignment2/checkpoints/ft_randaug_mix_crop008_all_seed1.pt",
+    "/net/projects/cci-abc/HPDiL/jzhang84/assignment2/checkpoints/ft_randaug_mix_crop008_all_seed2.pt"
+  ],
+  "correct": 432,
+  "split": "val",
+  "total": 480,
+  "tta": false
+}

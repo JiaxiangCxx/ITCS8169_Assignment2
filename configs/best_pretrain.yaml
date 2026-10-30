@@ -1,0 +1,41 @@
+# Final SSL stage (resolved configuration of runs/ssl_simclr_crop008_all_r18_e500):
+# SimCLR with crop scale (0.08, 1) on all 2,400 training images, labels unused.
+experiment:
+  name: ssl_simclr_crop008_all_r18_e500
+  seed: 0
+data:
+  root: dataset
+  train_dir: train
+  split_file: splits/seed0_val20.json
+  val_fraction: 0.2
+  image_size: 224
+  cache_size: 256
+  batch_size: 256
+  num_workers: 6
+  ssl_images: all_train
+model:
+  name: resnet18
+  projector:
+    hidden_dim: 2048
+    out_dim: 128
+    num_layers: 2
+ssl:
+  method: simclr
+  temperature: 0.2
+  augmentation:
+    crop_min: 0.08
+    color_jitter: 0.4
+    jitter_p: 0.8
+    grayscale_p: 0.2
+    blur_p: 0.5
+train:
+  epochs: 500
+  optimizer: sgd
+  learning_rate: 0.3
+  momentum: 0.9
+  weight_decay: 0.0001
+  warmup_epochs: 10
+  minimum_learning_rate: 0.0
+  amp: true
+  monitor_every: 25
+  save_epochs: []

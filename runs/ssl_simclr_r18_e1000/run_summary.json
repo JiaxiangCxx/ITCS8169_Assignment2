@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 2421.007069826126,
+  "epochs_completed": 1000,
+  "experiment": "ssl_simclr_r18_e1000",
+  "final_ssl_accuracy": 0.9966517857142857,
+  "final_ssl_loss": 1.6515620265688216,
+  "knn_val_accuracy": 0.7937500476837158,
+  "linear_probe_val_accuracy": 0.7958333492279053,
+  "method": "simclr",
+  "model": "resnet18",
+  "seed": 0,
+  "split_file": "splits/seed0_val20.json",
+  "ssl_images": "train_split",
+  "stage": "pretrain",
+  "train_size": 1920,
+  "val_size": 480
+}

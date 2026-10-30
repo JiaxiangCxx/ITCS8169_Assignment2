@@ -1,0 +1,39 @@
+# SSL initialization + the strongest supervised recipe (RandAugment, random
+# erasing, MixUp/CutMix). Identical to sup_randaug_mix.yaml except model.init,
+# so the pair measures the SSL gain on top of strong regularization.
+# Pass the backbone with --init-checkpoint runs/<ssl run>/last.pt.
+experiment:
+  name: ft_randaug_mix
+  seed: 0
+
+data:
+  root: dataset
+  train_dir: train
+  test_dir: test
+  split_file: splits/seed0_val20.json
+  val_fraction: 0.20
+  image_size: 224
+  cache_size: 256
+  augmentation: randaugment
+  batch_size: 128
+  num_workers: 6
+  randaugment_magnitude: 9
+  random_erasing: 0.25
+
+model:
+  name: resnet18
+  init: ssl
+  init_checkpoint: null
+
+train:
+  epochs: 200
+  optimizer: adamw
+  learning_rate: 0.001
+  weight_decay: 0.05
+  warmup_epochs: 5
+  label_smoothing: 0.1
+  amp: true
+  early_stopping_patience: 0
+  mixup_alpha: 0.2
+  cutmix_alpha: 1.0
+  mix_prob: 0.8

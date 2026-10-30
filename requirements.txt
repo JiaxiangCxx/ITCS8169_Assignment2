@@ -1,0 +1,8 @@
+torch==2.8.0
+torchvision==0.23.0
+numpy>=2.0,<3
+Pillow>=10,<13
+PyYAML>=6,<7
+matplotlib>=3.9,<4
+gdown>=6.4,<7
+

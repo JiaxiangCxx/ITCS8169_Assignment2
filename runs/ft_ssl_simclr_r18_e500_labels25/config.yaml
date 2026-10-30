@@ -1,0 +1,28 @@
+experiment:
+  name: ft_ssl_simclr_r18_e500_labels25
+  seed: 0
+data:
+  root: dataset
+  train_dir: train
+  test_dir: test
+  split_file: splits/seed0_val20.json
+  val_fraction: 0.2
+  image_size: 224
+  cache_size: 256
+  augmentation: basic
+  batch_size: 64
+  num_workers: 6
+  label_fraction: 0.25
+model:
+  name: resnet18
+  init: ssl
+  init_checkpoint: runs/ssl_simclr_r18_e500/last.pt
+train:
+  epochs: 200
+  optimizer: adamw
+  learning_rate: 0.001
+  weight_decay: 0.05
+  warmup_epochs: 5
+  label_smoothing: 0.1
+  amp: true
+  early_stopping_patience: 0

@@ -1,0 +1,33 @@
+__pycache__/
+*.py[cod]
+.venv/
+.idea/
+.vscode/
+.DS_Store
+
+# Data and local download helpers
+data/
+data
+dataset/
+dataset
+dataset_download/
+.tools/
+backups/
+
+# Training outputs and large artifacts
+logs/
+*.pt
+runs_smoke/
+# The released final checkpoint is tracked with Git LFS
+!checkpoints/*.pt
+*.pth
+*.ckpt
+
+# Generated report files
+report/*.aux
+report/*.log
+report/*.out
+
+# Course-provided source files kept locally, not republished
+ITCS_6169:8169_Assignment2.pdf
+Assignment2.pdf

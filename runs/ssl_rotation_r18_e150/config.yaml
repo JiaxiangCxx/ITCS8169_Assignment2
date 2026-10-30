@@ -1,0 +1,32 @@
+experiment:
+  name: ssl_rotation_r18_e150
+  seed: 0
+data:
+  root: dataset
+  train_dir: train
+  split_file: splits/seed0_val20.json
+  val_fraction: 0.2
+  image_size: 224
+  cache_size: 256
+  batch_size: 64
+  num_workers: 6
+  ssl_images: train_split
+model:
+  name: resnet18
+ssl:
+  method: rotation
+  augmentation:
+    crop_min: 0.35
+    color_jitter: 0.4
+    jitter_p: 0.8
+    grayscale_p: 0.2
+    blur_p: 0.0
+train:
+  epochs: 150
+  optimizer: sgd
+  learning_rate: 0.1
+  momentum: 0.9
+  weight_decay: 0.0005
+  warmup_epochs: 5
+  amp: true
+  monitor_every: 25

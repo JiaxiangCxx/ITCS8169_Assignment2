@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 625.5716705322266,
+  "epochs_completed": 150,
+  "experiment": "ssl_rotation_r18_e150",
+  "final_ssl_accuracy": 0.988671875,
+  "final_ssl_loss": 0.03241026615723967,
+  "knn_val_accuracy": 0.5895833373069763,
+  "linear_probe_val_accuracy": 0.6645833849906921,
+  "method": "rotation",
+  "model": "resnet18",
+  "seed": 0,
+  "split_file": "splits/seed0_val20.json",
+  "ssl_images": "train_split",
+  "stage": "pretrain",
+  "train_size": 1920,
+  "val_size": 480
+}
